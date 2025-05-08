@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Student Dashboard – Appointment System</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="firebase-init.js"></script>
+</head>
+<body>
+    <h1>Student Dashboard</h1>
+    <div id="studentInfo"></div>
+    <button id="studentLogout">Logout</button>
+    <hr />
+
+    <h2>Find a Teacher</h2>
+    <input type="text" id="teacherSearch" placeholder="Search by name or subject..." />
+    <div id="teachersListStudent">
+        <!-- Teachers list (Name, Dept, Subject) with Book/Message actions -->
+    </div>
+
+    <!-- Booking form (hidden by default) -->
+    <div id="bookingFormContainer" class="hidden">
+        <h3>Book Appointment with <span id="selectedTeacherName"></span></h3>
+        <form id="bookApptForm">
+            <label>Date & Time:
+                <input type="datetime-local" id="bookDatetime" required />
+            </label><br />
+            <label>Purpose:
+                <input type="text" id="bookPurpose" placeholder="Reason for appointment" required />
+            </label><br />
+            <button type="submit">Confirm Booking</button>
+            <button type="button" id="cancelBooking">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Message form (hidden by default) -->
+    <div id="messageFormContainer" class="hidden">
+        <h3>Send Message to <span id="msgTeacherName"></span></h3>
+        <form id="sendMsgForm">
+            <label>Message:
+                <textarea id="messageText" required></textarea>
+            </label><br />
+            <button type="submit">Send Message</button>
+            <button type="button" id="cancelMessage">Cancel</button>
+        </form>
+    </div>
+
+    <hr />
+    <h2>My Appointments</h2>
+    <div id="myAppointmentsList">
+        <!-- Student's appointments will appear here -->
+    </div>
+
+    <script src="student.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel - Add Users</title>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="firebase-init.js"></script>
+  <script defer src="admin.js"></script>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <button id="logoutBtn">Logout</button>
+
+  <section id="add-student">
+    <h2>Add Student</h2>
+    <form id="addStudentForm">
+      <div>
+        <label for="studentName">Full Name:</label>
+        <input type="text" id="studentName" required>
+      </div>
+      <div>
+        <label for="studentEmail">Email:</label>
+        <input type="email" id="studentEmail" required>
+      </div>
+      <div>
+        <label for="studentPassword">Password:</label>
+        <input type="password" id="studentPassword" required>
+      </div>
+      <button type="submit">Add Student</button>
+    </form>
+    <p id="studentMessage"></p>
+  </section>
+
+  <section id="add-teacher">
+    <h2>Add Teacher</h2>
+    <form id="addTeacherForm">
+      <div>
+        <label for="teacherName">Full Name:</label>
+        <input type="text" id="teacherName" required>
+      </div>
+      <div>
+        <label for="teacherEmail">Email:</label>
+        <input type="email" id="teacherEmail" required>
+      </div>
+      <div>
+        <label for="teacherPassword">Password:</label>
+        <input type="password" id="teacherPassword" required>
+      </div>
+      <button type="submit">Add Teacher</button>
+    </form>
+    <p id="teacherMessage"></p>
+  </section>
+</body>
+</html>
